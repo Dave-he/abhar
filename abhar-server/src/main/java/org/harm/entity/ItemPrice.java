@@ -1,6 +1,5 @@
 package org.harm.entity;
 
-import io.quarkus.arc.All;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,8 +18,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Entity(name = "goods")
-public class Goods {
+@Entity(name = "item_price")
+public class ItemPrice {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
