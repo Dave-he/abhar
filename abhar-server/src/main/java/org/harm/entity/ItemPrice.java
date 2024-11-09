@@ -1,33 +1,36 @@
 package org.harm.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 /**
  * 物品
+ *
  * @author hyx
  * @date 2024/11/5
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
+@SuperBuilder
 @Entity(name = "item_price")
-public class ItemPrice {
+public class ItemPrice extends BaseEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "item_id")
+    private String itemId;
 
-    private String name;
+    @Column(name = "local_price")
+    private Long localPrice;
 
-    private String note;
+    @Column(name = "usd_price")
+    private Long usdPrice;
 
-    private String img;
+    @Column(name = "local_date")
+    private String localDate;
 }
