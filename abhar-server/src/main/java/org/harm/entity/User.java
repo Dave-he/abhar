@@ -1,10 +1,6 @@
 package org.harm.entity;
 
-import org.harm.common.JsonObjectConverter;
-
-import jakarta.json.JsonObject;
 import jakarta.persistence.Column;
-import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,19 +19,24 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
-@Entity(name = "goods")
-public class Goods extends BaseEntity {
+@Entity(name = "user")
+public class User extends BaseEntity {
 
     @Column(name = "name")
     private String name;
 
-    @Column(name = "note")
-    private String note;
+    @Column(name = "email")
+    private String email;
 
-    @Column(name = "img")
-    private String img;
+    @Column(name = "phone_number")
+    private String phoneNumber;
 
-    @Column(name = "ext_info", columnDefinition = "JSON")
-    @Convert(converter = JsonObjectConverter.class)
-    private JsonObject extInfo;
+    @Column(name = "avatar_url")
+    private String avatarUrl;
+
+    @Column(name = "birthday")
+    private String birthday;
+
+    @Column(name = "sex", columnDefinition = "TINYINT(4)")
+    private Integer sex;
 }

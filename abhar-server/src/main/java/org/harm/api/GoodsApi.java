@@ -1,7 +1,7 @@
 package org.harm.api;
 
-import org.harm.dao.GoodsRepository;
-import org.harm.entity.Goods;
+import org.harm.dao.ProductRepository;
+import org.harm.entity.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import jakarta.ws.rs.DELETE;
@@ -20,16 +20,17 @@ import jakarta.ws.rs.core.MediaType;
 public class GoodsApi {
 
     @Autowired
-    GoodsRepository goodsRepository;
+    ProductRepository goodsRepository;
+
 
     @GET
-    public Iterable<Goods> list() {
+    public Iterable<Product> list() {
         return goodsRepository.findAll();
     }
 
     @POST
-    public Goods save(Goods goods) {
-        return goodsRepository.save(goods);
+    public Product save(Product product) {
+        return goodsRepository.save(product);
     }
 
     @DELETE

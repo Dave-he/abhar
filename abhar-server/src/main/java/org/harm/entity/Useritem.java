@@ -1,6 +1,5 @@
 package org.harm.entity;
 
-import jakarta.json.Json;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
@@ -17,18 +16,18 @@ import lombok.experimental.SuperBuilder;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @SuperBuilder
-@Entity(name = "goods_item")
-public class GoodsItem extends BaseEntity {
+@Entity(name = "user_item")
+public class Useritem extends BaseEntity {
+
+    @Column(name = "user_id")
+    private Long userId;
+
+    @Column(name = "item_id")
+    private String item_id;
 
     @Column(name = "good_id")
-    private Long goodId;
-
-    @Column(name = "note")
-    private String note;
-
-    @Column(name = "img")
-    private String img;
+    private String good_id;
 }

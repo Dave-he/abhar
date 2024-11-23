@@ -1,6 +1,6 @@
 package org.harm.dao;
 
-import org.harm.entity.Goods;
+import org.harm.entity.Product;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.ListPagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
  * @author hyx
  */
 @Repository
-public interface GoodsRepository extends CrudRepository<Goods, Long>, ListPagingAndSortingRepository<Goods, Long> {
+public interface ProductRepository
+        extends CrudRepository<Product, Long>, ListPagingAndSortingRepository<Product, Long> {
 
 }
